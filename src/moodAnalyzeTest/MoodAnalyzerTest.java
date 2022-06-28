@@ -1,5 +1,9 @@
 package moodAnalyzeTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
+
 public class MoodAnalyzerTest {
 	
 	public String analyseMood(String mood) {
@@ -9,12 +13,10 @@ public class MoodAnalyzerTest {
 			return "Happy Mood";
 	}
 	
-	
-	public static void main(String[] args) {
-		MoodAnalyzerTest moodTest= new MoodAnalyzerTest();
-		System.out.println(moodTest.analyseMood("I Am Happy"));
-		System.out.println(moodTest.analyseMood("I Am  Sad "));
-
+	@Test
+	public void passingSad_IsProper_ShouldReturn_Sad_Mood() {
+		MoodAnalyzerTest mood=new MoodAnalyzerTest();
+		assertEquals("Sad Mood", mood.analyseMood("I am in Sad Mood"));
 	}
 
 }
