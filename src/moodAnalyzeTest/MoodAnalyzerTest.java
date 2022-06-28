@@ -1,27 +1,33 @@
 package moodAnalyzeTest;
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 public class MoodAnalyzerTest {
 	
-		String mood;
-		
-		
-		public MoodAnalyzerTest(String mood) {
-			super();
-			this.mood = mood;
+		class Mood{
+			String mood;
+			
+			public Mood(String mood) {
+				super();
+				this.mood = mood;
+			}
+
+
+			public String analyseMood() {
+				if (mood.contains("Sad"))
+					return "Sad Mood";
+				else 
+					return "Happy Mood";
+			}
+			
 		}
-
-
-		public String analyseMood() {
-			if (mood.contains("Sad"))
-				return "Sad Mood";
-			else 
-				return "Happy Mood";
-		}
 		
-
-	public static void main(String[] args) {
-		MoodAnalyzerTest moodcheck =new MoodAnalyzerTest("This is a Sad Message");
-		System.out.println(moodcheck.analyseMood());
-	}
+		@Test
+		public void Given_Sad_IsProper_ShouldReturn_Sad_Mood() {
+			Mood moodcheck =new Mood("I am in Sad Mood");
+				assertEquals("Sad Mood", moodcheck.analyseMood() );
+		}
 
 }
