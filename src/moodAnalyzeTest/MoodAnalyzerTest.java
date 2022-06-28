@@ -14,9 +14,9 @@ public class MoodAnalyzerTest {
 	}
 	
 	@Test
-	public void passingSad_IsProper_ShouldReturn_Sad_Mood() {
+	public void passingAnyMood_IsProper_ShouldReturn_Happy_Mood() {
 		MoodAnalyzerTest mood=new MoodAnalyzerTest();
-		assertEquals("Sad Mood", mood.analyseMood("I am in Sad Mood"));
+		assertEquals("Happy Mood", mood.analyseMood("I am in Any Mood"));
 	}
 
 }
