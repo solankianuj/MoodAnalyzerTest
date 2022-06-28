@@ -26,8 +26,8 @@ public class MoodAnalyzerTest {
 		
 		@Test
 		public void Given_Sad_IsProper_ShouldReturn_Sad_Mood() {
-			Mood moodcheck =new Mood("I am in Sad Mood");
-				assertEquals("Sad Mood", moodcheck.analyseMood() );
+			Mood moodcheck =new Mood("I am in Happy Mood");
+				assertEquals("Happy Mood", moodcheck.analyseMood() );
 		}
 
 }
